@@ -1,5 +1,5 @@
 <?php
-$domain = '/SINBED';
+include_once('./global.php');
 $request = $_SERVER['REQUEST_URI']; 
 switch ($request) {
   case $domain.'/' :
@@ -7,6 +7,9 @@ switch ($request) {
       break;
   case $domain.'/login':
     require_once __DIR__.'/Vista/login.php';
+  break;
+  case $domain.'/dashboard':
+    require_once __DIR__.'/Vista/dashboard.php';
   break;
   
 }
