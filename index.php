@@ -11,6 +11,13 @@ switch ($request) {
   case $domain.'/dashboard':
     require_once __DIR__.'/Vista/dashboard.php';
   break;
+  case $domain.'/administrar-usuarios':
+    require_once __DIR__.'/Vista/adminUser.php';
+  break;
+  case $domain.'/cerrarSesion' :
+    session_destroy();
+    header('Location:'.$domain.'/');
+  break;
   
 }
 ?>

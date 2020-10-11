@@ -21,4 +21,10 @@ class UserController
             return $user;
         }
     }
+    public function all()
+    {
+        $result = $this->con->pdo->query("SELECT u.id_usuario,r.nom_rol as rol,u.nom_usuario from usuario as u INNER JOIN rol as r ON u.rol=r.id_rol ;");
+        $result= $result->FETCHALL(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
